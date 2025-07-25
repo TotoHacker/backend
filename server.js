@@ -18,7 +18,7 @@ app.use(express.json())
 app.use('/auth', authRoutes)
 
 // Rutas protegidas (requieren token)
-app.use('/leads', authenticateToken, leadsRoutes)
+app.use('/leads')
 
 // Ruta raíz para prueba rápida
 app.get('/', (req, res) => {
