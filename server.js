@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 
 import authRoutes from './routes/auth.js'
 import leadsRoutes from './routes/leads.js'
-import { authenticateToken } from './middleware/authMiddleware.js'
 
 dotenv.config()
 
@@ -18,7 +17,7 @@ app.use(express.json())
 app.use('/auth', authRoutes)
 
 // Rutas protegidas (requieren token)
-app.use('/leads')
+app.use('/leads', leadsRoutes)
 
 // Ruta raíz para prueba rápida
 app.get('/', (req, res) => {
